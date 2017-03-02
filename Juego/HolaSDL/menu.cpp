@@ -24,12 +24,10 @@ void Menu::jugar(Game * jg){
 void Menu::onClick(){
 	bool clickeado = false;
 
-	int i = objetos.size() - 1;
-	while (!clickeado && i >= 0)
-	{
-		if (objetos[i]->onClick())
-			clickeado = true;
-		i--;
+	std::list <raizObjeto*>::reverse_iterator it = objetos.rbegin();
+	while (!clickeado && it != objetos.rend()){
+		if ((*it)->onClick())	clickeado = true;
+		it++;
 	}
 
 }

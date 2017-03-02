@@ -12,6 +12,7 @@ Estado::~Estado()
 }
 
 void Estado::draw() {
+
 	for (std::list<raizObjeto*>::iterator objsIt = objetos.begin(); 
 		objsIt != objetos.end(); objsIt++) {
 		if ((*objsIt) != nullptr)

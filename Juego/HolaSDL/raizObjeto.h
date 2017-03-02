@@ -15,7 +15,7 @@ public:
 			this->y = other.y;
 		}
 
-		Direccion set(int a, int b) { x = a; y = b; };
+		void set(int a, int b) { this->x = a; this->y = b; };
 
 	};
 public:

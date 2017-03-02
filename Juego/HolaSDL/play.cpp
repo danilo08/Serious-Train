@@ -29,11 +29,10 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 0, 0);
 
 
-	objetos.emplace_back(train); 
-	objetos.emplace_back(player);
-	objetos.emplace_back(TrainHp);
+	//objetos.emplace_back(train); 
+	//objetos.emplace_back(player);
+	//objetos.emplace_back(TrainHp);
 
-	
 
 	return true;
 }
@@ -46,24 +45,26 @@ void Play::onClick(){
 	balas.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
 }
 void Play::update() {  
-	for (unsigned int i = 3; i < objetos.size(); i++) {
+	for (std::list <raizObjeto*>::iterator itO = objetos.begin();
+		itO != objetos.end(); itO++) {
 
 		
-		if (objetos[i] != nullptr  && objetos[i]->getId() == 'E' 
-			&& objetos[i]->getx() >= 520 && objetos[i]->getx() <= 775) {// detecta zombis que quitan vida al tren
-			objetos[2]->move('h');
+		if ((*itO) != nullptr  && (*itO)->getId() == 'E'
+			&& (*itO)->getx() >= 520 && (*itO)->getx() <= 775) {// detecta zombis que quitan vida al tren
+			TrainHp->move('h');
 		}
-		for (unsigned int j = 0; j < balas.size(); j++) {
+		for (std::list <raizObjeto*>::iterator itB = balas.begin();
+			itB != balas.end(); itB++) {
 			// muerte por colisión de objetos exceptuando el personaje, tren y barra de vida, si va a haber choque entre zombies hay que poner
 			// un booleano que identifique entre balas y sombis
-			if (objetos[i] != nullptr && balas[j] != nullptr && 
-				(objetos[i]->getx() - balas[j]->getx()) <= 30 && (objetos[i]->getx() - balas[j]->getx()) >= -30 &&
-				 (objetos[i]->gety() - balas[j]->gety()) <= 40 && (objetos[i]->gety() - balas[j]->gety()) >= -40) {
+			if ((*itO) != nullptr && (*itB) != nullptr &&
+				((*itO)->getx() - (*itB)->getx()) <= 30 && ((*itO)->getx() - (*itB)->getx()) >= -30 &&
+				 ((*itO)->gety() - (*itB)->gety()) <= 40 && ((*itO)->gety() - (*itB)->gety()) >= -40) {
 
-			    delete objetos[i];
-			    objetos[i] = nullptr;
-				delete balas[j];
-				balas[j] = nullptr;
+			    delete *itO;
+			   *itO = nullptr;
+				delete *itB;
+				*itB = nullptr;
 		     }
 		}
 		
@@ -71,14 +72,21 @@ void Play::update() {
 		
 	}
 	aleatorio = rand() % 10000; //generar zombies aleatorios
+	raizObjeto::Direccion dir;
 	if (aleatorio >= 9980) {
 		izq = rand() % 2;
-		if (izq == 0) objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, rand() % 500 + 50));
-		else objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, rand() % 500 + 50));
+		if (izq == 0) {
+			dir.set(1, 0);
+			objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 0, rand() % 500 + 50, dir));
+		}
+		else {
+			dir.set(-1, 0);
+			objetos.emplace_back(new Enemigo(ptsjuego, Game::TEnemigo, 1300, rand() % 500 + 50, dir));
+		}
 	}
 	Estado::update();
 }
 
 void Play::move(char c){
-	objetos[1]->move(c);
+	player->move(c);
 }

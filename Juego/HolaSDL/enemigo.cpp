@@ -4,8 +4,7 @@
 
 
 
-Enemigo::Enemigo(Game* juego, Game::Texturas_t text, int x, int y)
-{
+Enemigo::Enemigo(Game* juego, Game::Texturas_t text, int x, int y, Direccion dir){
 	juegootp = juego;
 	Ttextura = text;
 
@@ -14,6 +13,8 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, int x, int y)
 
 	pimgx = x;
 	pimgy = y;
+
+	_dir = dir;
 }
 
 
@@ -36,15 +37,17 @@ bool Enemigo::onClick() {
 	return true;
 }
 void Enemigo::update() {
-	cont++;
-	if (cont >= 5 && pimgx >=775) {
-		cont = 0;
-		pimgx--;
-	}
-	if (cont >= 5 && pimgx <= 520) {
-		cont = 0;
-		pimgx++;
-	}
+	pimgx += dir.x*vel;
+	pimgy += dir.y*vel;
+	//cont++;
+	//if (cont >= 5 && pimgx >=775) {
+	//	cont = 0;
+	//	pimgx--;
+	//}
+	//if (cont >= 5 && pimgx <= 520) {
+	//	cont = 0;
+	//	pimgx++;
+	//}
 
 }
 

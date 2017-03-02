@@ -17,7 +17,7 @@ protected:
 
 	Game* ptsjuego;
 
-	std::list<raizObjeto*> objetos; // objetos que contiene cada estado
+	std::list <raizObjeto*> objetos; // objetos que contiene cada estado
 	std::list <raizObjeto*> balas; 
 
 };
