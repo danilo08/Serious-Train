@@ -1,5 +1,6 @@
 #pragma once
-#include "game.h" 
+#include "game.h"
+
 
 class Estado: public raizEstado
 {
@@ -16,8 +17,8 @@ protected:
 
 	Game* ptsjuego;
 
-	std::vector <raizObjeto*> objetos; // objetos que contiene cada estado
-	std::vector <raizObjeto*> balas; 
+	std::list<raizObjeto*> objetos; // objetos que contiene cada estado
+	std::list <raizObjeto*> balas; 
 
 };
 

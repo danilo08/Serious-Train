@@ -12,13 +12,15 @@ Estado::~Estado()
 }
 
 void Estado::draw() {
-	for (unsigned int i = 0; i < objetos.size(); i++) {
-		if (objetos[i] != nullptr)
-		    objetos[i]->draw();
+	for (std::list<raizObjeto*>::iterator objsIt = objetos.begin(); 
+		objsIt != objetos.end(); objsIt++) {
+		if ((*objsIt) != nullptr)
+		   (*objsIt)->draw();
 	}	
-	for (unsigned int i = 0; i < balas.size(); i++) {
-		if (balas[i] != nullptr)
-			balas[i]->draw();
+	for (std::list<raizObjeto*>::iterator balasIt = balas.begin();
+		balasIt != objetos.end(); balasIt++) {
+		if ((*balasIt) != nullptr)
+			(*balasIt)->draw();
 	}
 }
 
@@ -27,13 +29,15 @@ void Estado::draw() {
 
 
 void Estado::update() {
-	for (unsigned int i = 0; i < objetos.size(); i++) {
-		if (objetos[i] != nullptr)
-		    objetos[i]->update();
+	for (std::list<raizObjeto*>::iterator objsIt = objetos.begin();
+		objsIt != objetos.end(); objsIt++) {
+		if ((*objsIt) != nullptr)
+			(*objsIt)->update();
 	}
-	for (unsigned int i = 0; i < balas.size(); i++) {
-		if (balas[i] != nullptr)
-			balas[i]->update();
+	for (std::list<raizObjeto*>::iterator balasIt = balas.begin();
+		balasIt != objetos.end(); balasIt++) {
+		if ((*balasIt) != nullptr)
+			(*balasIt)->update();
 	}
 }
 

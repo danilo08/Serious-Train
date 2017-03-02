@@ -4,6 +4,7 @@
 #include "raizEstado.h"
 
 #include <SDL.h>
+#include <list>
 #include <vector> // para vectores de texturas, objetos, ect.
 #include <string>
 #include <stack> //  uso de pila para los estados
