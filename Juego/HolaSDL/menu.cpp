@@ -22,12 +22,8 @@ void Menu::jugar(Game * jg){
 }
 
 void Menu::onClick(){
-	bool clickeado = false;
+	std::list <raizObjeto*>::iterator it = objetos.begin();
+	std::list <raizObjeto*>::iterator itEnd = objetos.end();
 
-	std::list <raizObjeto*>::reverse_iterator it = objetos.rbegin();
-	while (!clickeado && it != objetos.rend()){
-		if ((*it)->onClick())	clickeado = true;
-		it++;
-	}
-
+	while (!(*it)->onClick() && it!=itEnd) it++;//error: iterator not deferenciable
 }
