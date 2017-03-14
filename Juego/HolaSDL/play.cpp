@@ -110,10 +110,13 @@ void Play::update() {
 					// El Dios de la programación está llorando.
 					// Amargamente.
 
-					if (objetos[i] != nullptr && objetos[j] != nullptr && objetos[i]->getId() == 'E' && objetos[j]->getId() == 'B' &&
+					if (objetos[i] != nullptr && objetos[j] != nullptr && (objetos[i]->getId() == 'R' || objetos[i]->getId() == 'L') && objetos[j]->getId() == 'B' &&
 						(objetos[i]->getx() - objetos[j]->getx()) <= 30 && (objetos[i]->getx() - objetos[j]->getx()) >= -30 &&
 						(objetos[i]->gety() - objetos[j]->gety()) <= 40 && (objetos[i]->gety() - objetos[j]->gety()) >= -40) {
-												
+						
+						if (objetos[i]->getId() == 'L') ptsjuego->addCoins(5);
+						else  ptsjuego->addCoins(10);
+
 						delete objetos[j];
 						objetos[j] = nullptr;		
 						delete objetos[i];
