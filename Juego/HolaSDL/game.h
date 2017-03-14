@@ -51,7 +51,7 @@ private:
 	bool handle_event();
 
 
-	bool espera, gameOver, exit;
+	bool espera, exit;
 	int mx, my;
 	int cadencia;
 	int nivel = 1;
