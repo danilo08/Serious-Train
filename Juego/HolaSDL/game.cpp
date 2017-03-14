@@ -14,7 +14,7 @@ Game::Game()
 
 	ntexturas[0] = "../bmps/fondoprot.png";
 	ntexturas[1] = "../bmps/personaje.jpg";
-	ntexturas[2] = "../bmps/batidle.png";
+	ntexturas[2] = "../bmps/murcielago.png";
 	ntexturas[3] = "../bmps/ene.png";
 	ntexturas[4] = "../bmps/tren.png";
 	ntexturas[5] = "../bmps/barraHP.png";

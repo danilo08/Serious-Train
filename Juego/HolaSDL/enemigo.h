@@ -14,7 +14,9 @@ public:
 private:
 	int cont = 0;
 	SDL_Rect rect;
+	SDL_Rect rectA;
 
+	int i = 0;
 	bool r;
 };
 
