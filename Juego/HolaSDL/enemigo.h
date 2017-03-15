@@ -17,6 +17,7 @@ private:
 	SDL_Rect rectA;
 
 	int i = 0;
+	int j = 0;
 	bool r;
 };
 

@@ -9,7 +9,7 @@ Enemigo::Enemigo(Game* juego, Game::Texturas_t text, int x, int y, bool rap)
 	juegootp = juego;
 	Ttextura = text;
 
-	alto = 50;
+	alto = 71;
 	ancho = 240;  // el problema de que los enemigos se vena alargados esta aqui que habria que acceder a la anchura de la textura segun el tipo de enemigo.
 	anchocapa = ancho / 3;
 
@@ -44,10 +44,14 @@ bool Enemigo::onClick() {
 	return true;
 }
 void Enemigo::update() {
+	j++;
+	if (j >= 150){  //APAÑISIMO
+		i += ancho;
+		rectA.x = i;
+		if (i > Enemigo::ancho) i = 0;
+		j = 0;
+	}
 
-	i += ancho;
-	rectA.x = i;
-	if (i > Enemigo::ancho) i = 0;
 
 	cont++;
 	if (cont >= 5 && pimgx >=745) { // ZAS, En TODA LA BOCA
