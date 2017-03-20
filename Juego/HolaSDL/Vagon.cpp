@@ -37,7 +37,7 @@ void Vagon::update() {
 	//hacer uso de la variable TIPO
 	if (tipo == "disparador") {
 		std::cout << "Yo disparo" << std::endl;
-		piedrasVagon.emplace_back(new Bala(juegootp, Game::TPersonaje, 0, -50, 200));
+		piedrasVagon.emplace_back(new Bala(juegootp, Game::TPersonaje, 0, -70, 200));
 	}
 }
 bool Vagon::onClick() {
