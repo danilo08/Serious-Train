@@ -17,8 +17,7 @@ public:
 	char getEst(){ return 'P'; }
 
 private:
-	int izq;
-	int aleatorio;
+	
 	Personaje* player;
 	barraHP* TrainHp;
 
@@ -32,5 +31,6 @@ private:
 
 	int emax, enem;
 	int killed;
+	bool fin = false;
 };
 
