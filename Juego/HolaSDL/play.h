@@ -21,6 +21,7 @@ private:
 	int aleatorio;
 	Personaje* player;
 	barraHP* TrainHp;
+	Vagon* vagon;
 
 	int vag = 5;
 	bool dest;

@@ -1,5 +1,6 @@
 #pragma once
 #include "Objeto.h"
+#include "bala.h"
 
 #include <string>
 class Vagon :
@@ -19,5 +20,6 @@ public:
 private: 
 	std::string tipo;
 	SDL_Rect rect;
+	std::vector <RaizObjeto*> piedrasVagon;
 };
 

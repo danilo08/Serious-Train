@@ -34,16 +34,20 @@ Play::~Play()
 }
 
 bool Play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
-	for (unsigned int i = 0; i < vag; i++) {
+	/*for (unsigned int i = 0; i < vag; i++) {
 		tren.emplace_back(new Vagon(ptsjuego, Game::TTren, 25, 131*i, ""));
-	}
+	}*/
 	//train = new Tren(ptsjuego, Game::TTren, 25, 0, " ");// en el último hueco poner como string tipo de vagón
+	//tren.emplace_back(new Vagon(ptsjuego, Game::TTren, 25, 2, "disparador"));
+	tren.emplace_back(new Vagon(ptsjuego, Game::TTren, 25, 0, " "));
+	vagon = new Vagon(ptsjuego, Game::TTren, 25, 0, "disparador");
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);
 
 
 	objetos.emplace_back(player);
 	objetos.emplace_back(TrainHp);
+	objetos.emplace_back(vagon);
 
 	
 
@@ -74,12 +78,21 @@ void Play::draw() {
 void Play::onClick(){
 	//objetos[0]->onClick();
 	objetos.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
+	//vagon->update();
 }
 void Play::update() {  
 
-	for (auto i : tren){
-			i->update();
+	for (auto i : tren) {
+		if (i != nullptr) {
+			std::cout << "HOLA";
+			vagon->update();
+		}
 	}
+	/*if (vagon != nullptr) {
+		std::cout << "HOLA";
+		vagon->update();
+	}*/
+	
 
 	for (auto i : objetos){
 		if (i != nullptr){

@@ -8,7 +8,7 @@ Vagon::Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string t)
 	juegootp = juego;
 	Ttextura = text;
 
-	alto = 130;
+	alto = 300;
 	ancho = 1200;
 
 	pimgx = x;
@@ -35,6 +35,10 @@ void Vagon::draw() {
 
 void Vagon::update() {
 	//hacer uso de la variable TIPO
+	if (tipo == "disparador") {
+		std::cout << "Yo disparo" << std::endl;
+		piedrasVagon.emplace_back(new Bala(juegootp, Game::TPersonaje, 0, -50, 200));
+	}
 }
 bool Vagon::onClick() {
 	return true;
