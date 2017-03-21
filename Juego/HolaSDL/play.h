@@ -14,6 +14,7 @@ public:
 	void draw();
 	void update();
 	void move(char c);
+	void diparaVagon(char tip, int pmx, int pmy);
 	char getEst(){ return 'P'; }
 
 private:

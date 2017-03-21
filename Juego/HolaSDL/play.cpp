@@ -39,15 +39,15 @@ bool Play::initObjects() { // creación de los objetos dando un puntero, una text
 	}*/
 	//train = new Tren(ptsjuego, Game::TTren, 25, 0, " ");// en el último hueco poner como string tipo de vagón
 	//tren.emplace_back(new Vagon(ptsjuego, Game::TTren, 25, 2, "disparador"));
-	tren.emplace_back(new Vagon(ptsjuego, Game::TTren, 25, 0, " "));
-	vagon = new Vagon(ptsjuego, Game::TTren, 25, 0, "disparador");
+	//tren.emplace_back(new Vagon(ptsjuego, Game::TTren, 25, 0, " "));
+	vagon = new Vagon(ptsjuego, this, Game::TTren, 25, 0, "disparador");
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
 	TrainHp = new barraHP(ptsjuego, Game::TBarra, 10, 15, 0);
 
-
+	objetos.emplace_back(vagon);
 	objetos.emplace_back(player);
 	objetos.emplace_back(TrainHp);
-	objetos.emplace_back(vagon);
+	
 
 	
 
@@ -80,12 +80,16 @@ void Play::onClick(){
 	objetos.emplace_back(new Bala(ptsjuego, Game::TPersonaje, player->getx(), player->gety(), player->getMira()));
 	//vagon->update();
 }
+
+void Play::diparaVagon(char obj, int pmx, int pmy) {
+	objetos.emplace_back(new Bala(ptsjuego, Game::TPersonaje, pmx, pmy, 1));
+}
 void Play::update() {  
 
 	for (auto i : tren) {
 		if (i != nullptr) {
 			std::cout << "HOLA";
-			vagon->update();
+			i->update();
 		}
 	}
 	/*if (vagon != nullptr) {

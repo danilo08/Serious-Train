@@ -1,13 +1,14 @@
 #pragma once
 #include "Objeto.h"
-#include "bala.h"
+//#include "bala.h"
+#include "Play.h"
 
 #include <string>
 class Vagon :
 	public Objeto
 {
 public:
-	Vagon(Game* juego, Game::Texturas_t text, int x, int y, std::string tipo);
+	Vagon(Game* juego, Play* play, Game::Texturas_t text, int x, int y, std::string tipo);
 	~Vagon();
 	void draw();
 	void update();	
@@ -20,6 +21,7 @@ public:
 private: 
 	std::string tipo;
 	SDL_Rect rect;
-	std::vector <RaizObjeto*> piedrasVagon;
+	//std::vector <RaizObjeto*> piedrasVagon;
+	Play* p;
 };
 

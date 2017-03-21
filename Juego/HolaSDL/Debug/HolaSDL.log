@@ -1,1 +1,31 @@
-﻿  HolaSDL.vcxproj -> C:\Users\Gonzalo Guzmán\Desktop\issue#8\Serious-Train\Juego\bin\HolaSDLDebug.exe
+﻿  Vagon.cpp
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\play.h(25): error C2143: syntax error: missing ';' before '*'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\play.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\play.h(25): error C2238: unexpected token(s) preceding ';'
+  Play.cpp
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(11): error C2061: syntax error: identifier 'Play'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C2143: syntax error: missing ';' before '*'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C2238: unexpected token(s) preceding ';'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\play.cpp(43): error C2661: 'Vagon::Vagon': no overloaded function takes 6 arguments
+  Menu.cpp
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(11): error C2061: syntax error: identifier 'Play'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C2143: syntax error: missing ';' before '*'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C2238: unexpected token(s) preceding ';'
+  Game.cpp
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(11): error C2061: syntax error: identifier 'Play'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C2143: syntax error: missing ';' before '*'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C2238: unexpected token(s) preceding ';'
+  FinNivel.cpp
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(11): error C2061: syntax error: identifier 'Play'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C2143: syntax error: missing ';' before '*'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C2238: unexpected token(s) preceding ';'
+  Estado.cpp
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(11): error C2061: syntax error: identifier 'Play'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C2143: syntax error: missing ';' before '*'
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\gonzalo guzmán\desktop\mybranchproject\serious-train\juego\holasdl\vagon.h(25): error C2238: unexpected token(s) preceding ';'
+  Generating Code...
