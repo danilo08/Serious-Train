@@ -36,8 +36,15 @@ Play::~Play()
 }
 
 bool Play::initObjects() { // creación de los objetos dando un puntero, una textura y una posición (constructora de objs)
-	for (unsigned int i = 0; i < vag; i++) {
-		tren.emplace_back(new Vagon(ptsjuego, Game::TTren, 25, 131*i, ""));
+
+
+	tren.emplace_back(new Vagon(ptsjuego, Game::TLocomotora, 602, -100, ""));
+	for (unsigned int i = 1; i < vag; i++) {	
+
+	     if (i = 1) tren.emplace_back(new Vagon(ptsjuego, Game::TVagon1, 600, 98 * i, ""));
+		 if (i = 2) tren.emplace_back(new Vagon(ptsjuego, Game::TVagon2, 600, 149 * i, ""));
+		 if (i = 3) tren.emplace_back(new Vagon(ptsjuego, Game::TVagon3, 600, 166 * i, ""));
+		 if (i = 4) tren.emplace_back(new Vagon(ptsjuego, Game::TVagon4, 600, 251 * i, ""));
 	}
 	//train = new Tren(ptsjuego, Game::TTren, 25, 0, " ");// en el último hueco poner como string tipo de vagón
 	player = new Personaje(ptsjuego, Game::TPersonaje, 650, 350);
