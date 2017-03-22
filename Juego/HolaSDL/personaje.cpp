@@ -8,8 +8,9 @@ Personaje::Personaje(Game* juego, Game::Texturas_t text, int x, int y)
 	juegootp = juego;
 	Ttextura = text;
 
-	alto  = 50;
-	ancho = 50;
+	alto = 57;
+	ancho = 252;  // el problema de que los enemigos se vena alargados esta aqui que habria que acceder a la anchura de la textura segun el tipo de enemigo.
+	anchocapa = ancho / 8;
 
 	pimgx = x;
 	pimgy = y;
@@ -32,8 +33,13 @@ void Personaje::draw() {
 	rect.y = pimgy;
 		
 	SDL_Renderer* render = juegootp->getRender();
-	juegootp->getTextura(Ttextura)->draw(render, nullptr, &rect);
-	
+	juegootp->getTextura(Ttextura)->draw(render, &rectA, &rect);
+
+	rectA.h = alto;
+	rectA.w = anchocapa;
+	rectA.x = i;
+	rectA.y = 0;
+
 }
 
 
@@ -48,6 +54,14 @@ void Personaje::update() {
 		pimgy = 60;
 	else if (pimgy > 560)
 		pimgy = 560;
+
+	j++;
+	if (j >= 150){  //APAÑISIMO
+		i += ancho;
+		rectA.x = i;
+		if (i > Personaje::ancho) i = 0;
+		j = 0;
+	}
 }
 
 bool Personaje::onClick() {

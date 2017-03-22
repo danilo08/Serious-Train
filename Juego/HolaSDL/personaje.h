@@ -20,6 +20,8 @@ private:
 	Direccion dir;
 	int vel;
 	int mira;
-
+	int i;
+	int j;
 	SDL_Rect rect;
+	SDL_Rect rectA;
 };
