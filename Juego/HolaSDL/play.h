@@ -3,6 +3,7 @@
 #include "Personaje.h"
 #include "Vagon.h"
 #include "BarraHP.h"
+#include <SDL_mixer.h>
 
 class Play: public Estado
 {
@@ -22,6 +23,7 @@ private:
 	Personaje* player;
 	barraHP* TrainHp;
 
+	Mix
 	int vag = 5;
 	bool fin;
 	bool initObjects(); //crear y destruir los objetos del juego
